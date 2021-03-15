@@ -1,6 +1,7 @@
+import { AppProps } from "next/dist/next-server/lib/router/router";
 import Link from "next/link";
 
-function MyApp({ Component, pageProps }) {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <div>
       <nav>
@@ -16,6 +17,6 @@ function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
     </div>
   );
-}
+};
 
 export default MyApp;

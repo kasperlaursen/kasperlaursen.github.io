@@ -14,18 +14,13 @@ const BlogPostPage: React.FC<IBlogPostPageProps> = ({ post }) => {
     <div>
       <Head>
         <title>{title}</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>{title}</h1>
-        <div>
-          <p>
-            <small>{date}</small>
-          </p>
-          <p>{content}</p>
-          {tags && tags.map((tag) => `${tag}, `)}
-        </div>
+      <main className="space-y-4 text-gray-700">
+        <h1 className="font-bold text-4xl text-gray-800">{title}</h1>
+        <p>{date}</p>
+        <p className="text-xl sm:leading-10 space-y-6 mb-6 ">{content}</p>
+        {tags && tags.map((tag) => `${tag}, `)}
       </main>
     </div>
   );

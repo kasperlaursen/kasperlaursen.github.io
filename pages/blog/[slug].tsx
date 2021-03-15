@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import React from "react";
+import Label from "../../components/Label";
 import { mockBlogPosts } from "../../lib/data";
 import { IBlogPost } from "../../types/blog";
 
@@ -16,11 +17,11 @@ const BlogPostPage: React.FC<IBlogPostPageProps> = ({ post }) => {
         <title>{title}</title>
       </Head>
 
-      <main className="space-y-4 text-gray-700">
+      <main className="space-y-4">
         <h1 className="font-bold text-4xl text-gray-800">{title}</h1>
         <p>{date}</p>
         <p className="text-xl sm:leading-10 space-y-6 mb-6 ">{content}</p>
-        {tags && tags.map((tag) => `${tag}, `)}
+        {tags && tags.map((tag) => <Label>{tag}</Label>)}
       </main>
     </div>
   );

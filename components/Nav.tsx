@@ -23,7 +23,7 @@ interface INavItemProps {
 
 const NavItem: React.FunctionComponent<INavItemProps> = ({ children }) => {
   return (
-    <li className="text-green-600 hover:text-green-400 text-xl transition-color duration-200 ease-in-out">
+    <li className="text-green-500 hover:text-green-400 text-xl transition-color duration-200 ease-in-out">
       <Link href="/">
         <a>{children}</a>
       </Link>

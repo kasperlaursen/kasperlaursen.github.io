@@ -1,16 +1,27 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import React from "react";
-import Label from "../../src/general/Label";
-import { mockBlogPosts } from "../../lib/posts";
-import { IBlogPost } from "../../types/blog";
 
-interface IBlogPostPageProps {
-  post: IBlogPost;
+import { MdxRemote } from "next-mdx-remote/types";
+import renderToString from "next-mdx-remote/render-to-string";
+import hydrate from "next-mdx-remote/hydrate";
+
+import { getAllPosts } from "../../lib/posts";
+import Label from "../../src/general/Label";
+import { IPostMetadata } from "../../types/posts";
+
+interface IPostPageProps extends IPostMetadata {
+  content: MdxRemote.Source;
 }
 
-const BlogPostPage: React.FC<IBlogPostPageProps> = ({ post }) => {
-  const { title, content, date, tags } = post;
+const BlogPostPage: React.FC<IPostPageProps> = ({
+  title,
+  content,
+  date,
+  tags,
+}) => {
+  const hydratedContent = hydrate(content);
+
   return (
     <div>
       <Head>
@@ -20,7 +31,9 @@ const BlogPostPage: React.FC<IBlogPostPageProps> = ({ post }) => {
       <main className="space-y-4">
         <h1 className="font-bold text-4xl text-gray-800">{title}</h1>
         <p>{date}</p>
-        <p className="text-xl sm:leading-10 space-y-6 mb-6 ">{content}</p>
+        <p className="text-xl sm:leading-10 space-y-6 mb-6 ">
+          {hydratedContent}
+        </p>
         {tags && tags.map((tag) => <Label>{tag}</Label>)}
       </main>
     </div>
@@ -30,21 +43,34 @@ const BlogPostPage: React.FC<IBlogPostPageProps> = ({ post }) => {
 type PathParams = { slug: string };
 
 export const getStaticProps: GetStaticProps<
-  IBlogPostPageProps,
+  IPostPageProps,
   PathParams
 > = async (context) => {
   const { params } = context;
-  console.log(context);
+  const allPosts = getAllPosts();
+  const { metadata, content } = allPosts.find(
+    (item) => item.slug === params.slug
+  );
+  const mdxSource = await renderToString(content);
+
   return {
     props: {
-      post: mockBlogPosts.find((post) => post.slug === params.slug),
+      ...metadata,
+      date: `${new Date(metadata.date).toLocaleDateString()} ${new Date(
+        metadata.date
+      ).toLocaleTimeString()}`,
+      content: mdxSource,
     },
   };
 };
 
 export const getStaticPaths: GetStaticPaths<PathParams> = async () => {
   return {
-    paths: mockBlogPosts.map(({ slug }) => ({ params: { slug } })),
+    paths: getAllPosts().map((post) => ({
+      params: {
+        slug: post.slug,
+      },
+    })),
     fallback: false,
   };
 };

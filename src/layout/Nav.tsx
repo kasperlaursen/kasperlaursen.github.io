@@ -7,10 +7,9 @@ const Nav: React.FunctionComponent = () => {
     <nav className="pb-10">
       <ul className="flex items-center justify-center space-x-4 font-bold">
         <li>
-          <NavItem href="/">Home</NavItem>
-        </li>
-        <li>
-          <NavItem href="/about">About</NavItem>
+          <NavItem href="/">
+            <a>Home</a>
+          </NavItem>
         </li>
       </ul>
     </nav>

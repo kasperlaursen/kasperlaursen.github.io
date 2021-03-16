@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/globals.css";
 import { AppProps } from "next/dist/next-server/lib/router/router";
-import Header from "../components/Header";
-import Nav from "../components/Nav";
+import Header from "../src/layout/Header";
+import Nav from "../src/layout/Nav";
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (

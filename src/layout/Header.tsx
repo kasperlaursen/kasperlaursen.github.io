@@ -1,5 +1,5 @@
 import * as React from "react";
-import ThemeToggle from "./ThemeToggle";
+import ThemeToggle from "../theme/ThemeToggle";
 
 interface IHeaderProps {}
 

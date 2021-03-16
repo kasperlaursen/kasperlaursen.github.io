@@ -1,8 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import React from "react";
-import Label from "../../components/Label";
-import { mockBlogPosts } from "../../lib/data";
+import Label from "../../src/general/Label";
+import { mockBlogPosts } from "../../lib/posts";
 import { IBlogPost } from "../../types/blog";
 
 interface IBlogPostPageProps {

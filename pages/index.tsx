@@ -1,8 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Card from "../components/Card";
-import { mockBlogPosts } from "../lib/data";
+import Card from "../src/general/Card";
+import { mockBlogPosts } from "../lib/posts";
 
 const Home: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const Home: React.FC = () => {
       <main className="space-y-8">
         {mockBlogPosts.map(({ title, date, content, slug }) => (
           <div>
-            <Link href={`/blog/${slug}`}>
+            <Link href={`/posts/${slug}`}>
               <a>
                 <Card key={slug} className="p-3 space-y-1 cursor-pointer">
                   <p className="font-bold truncate">{title}</p>

@@ -7,8 +7,7 @@ import Nav from "../src/layout/Nav";
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <div className="mx-auto w-7/12">
-      <Header>Laursen.dev</Header>
-      <Nav />
+      <Header />
       <Component {...pageProps} />
     </div>
   );

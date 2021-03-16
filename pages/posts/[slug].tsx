@@ -6,9 +6,12 @@ import { MdxRemote } from "next-mdx-remote/types";
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 
+import { IoMdArrowRoundBack } from "react-icons/io";
+
 import { getAllPosts } from "../../lib/posts";
 import Label from "../../src/general/Label";
 import { IPostMetadata } from "../../types/posts";
+import Link from "next/link";
 
 interface IPostPageProps extends IPostMetadata {
   content: MdxRemote.Source;
@@ -29,6 +32,13 @@ const BlogPostPage: React.FC<IPostPageProps> = ({
       </Head>
 
       <main className="space-y-4">
+        <div>
+          <Link href="/">
+            <a className="flex items-center">
+              <IoMdArrowRoundBack /> <b>Home</b>
+            </a>
+          </Link>
+        </div>
         <h1 className="font-bold text-4xl text-gray-800">{title}</h1>
         <p>{date}</p>
         <p className="text-xl sm:leading-10 space-y-6 mb-6 ">

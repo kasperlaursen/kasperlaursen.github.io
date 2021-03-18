@@ -31,14 +31,15 @@ const BlogPostPage: React.FC<IPostPageProps> = ({
         <title>{title}</title>
       </Head>
 
+      <div className="absolute top-6 left-6">
+        <Link href="/">
+          <a className="flex items-center">
+            <IoMdArrowRoundBack /> <b>Home</b>
+          </a>
+        </Link>
+      </div>
+
       <main className="space-y-4">
-        <div>
-          <Link href="/">
-            <a className="flex items-center">
-              <IoMdArrowRoundBack /> <b>Home</b>
-            </a>
-          </Link>
-        </div>
         <h1 className="font-bold text-4xl text-gray-800">{title}</h1>
         <p>{date}</p>
         <p className="text-xl sm:leading-10 space-y-6 mb-6 ">

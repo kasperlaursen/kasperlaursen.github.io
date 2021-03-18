@@ -19,22 +19,24 @@ const Home: React.FC<IHomeProps> = ({ posts }) => {
       </Head>
 
       <main className="space-y-8">
-        {posts &&
-          posts.map(({ title, date, slug, excerpt }) => (
-            <div>
-              <Link href={`/posts/${slug}`}>
-                <a>
-                  <Card key={slug} className="p-3 space-y-1 cursor-pointer">
-                    <p className="font-bold truncate">{title}</p>
-                    <p className="line-clamp-3">{excerpt}</p>
-                    <p>
-                      <small>{date}</small>
-                    </p>
-                  </Card>
-                </a>
-              </Link>
-            </div>
-          ))}
+        <div className="grid grid-cols-2 gap-4">
+          {posts &&
+            posts.map(({ title, date, slug, excerpt }) => (
+              <div>
+                <Link href={`/posts/${slug}`}>
+                  <a>
+                    <Card key={slug} className="p-3 space-y-1 cursor-pointer">
+                      <p className="font-bold truncate">{title}</p>
+                      <p className="line-clamp-3">{excerpt}</p>
+                      <p>
+                        <small>{date}</small>
+                      </p>
+                    </Card>
+                  </a>
+                </Link>
+              </div>
+            ))}
+        </div>
       </main>
     </div>
   );

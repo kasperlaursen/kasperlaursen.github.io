@@ -24,8 +24,8 @@ const Home: React.FC<IHomeProps> = ({ posts }) => {
           <p>
             I'm a Web Developer living in Denmark 🇩🇰 currently working as a
             full-time Software Engineer. <br />
-            When not coding I enjoy tinkering 3D Printers 🖨️, Smart Home 💡 and
-            Drone Photography 🚁.
+            When not coding I enjoy tinkering with 3D Printers 🖨️, Smart Home 💡
+            and Drone Photography 🚁.
           </p>
         </div>
         {posts &&

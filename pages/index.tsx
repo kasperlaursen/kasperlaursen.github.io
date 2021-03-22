@@ -5,7 +5,6 @@ import Card from "../src/general/Card";
 import { IFullPost } from "../types/posts";
 import { GetStaticProps } from "next";
 import { getAllPosts } from "../lib/posts";
-import Label from "../src/general/Label";
 
 interface IHomeProps {
   posts: IFullPost[];

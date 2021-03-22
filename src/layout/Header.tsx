@@ -7,7 +7,6 @@ import ThemeToggle from "../theme/ThemeToggle";
 interface IHeaderProps {}
 
 const Header: React.FunctionComponent<IHeaderProps> = () => {
-  // TODO: Add dark Theme toggle
   return (
     <>
       <ThemeToggle />
@@ -21,7 +20,7 @@ const Header: React.FunctionComponent<IHeaderProps> = () => {
           <Link href="/">
             <a>
               <h1 className="text-4xl font-black items-stretch text-gray-900 dark:text-gray-100">
-                Hi!👋 I'm Kasper Laursen.
+                Hi! I'm Kasper Laursen 👋
               </h1>
             </a>
           </Link>

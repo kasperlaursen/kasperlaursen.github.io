@@ -45,7 +45,7 @@ const Home: React.FC<IHomeProps> = ({ posts }) => {
                     <h2 className="text-2xl font-extrabold truncate">
                       {title}
                     </h2>
-                    <p className="line-clamp-3">{excerpt}</p>
+                    {excerpt && <p className="line-clamp-3">{excerpt}</p>}
                     <small className="text-base">🗓️ {date}</small>
                   </div>
                 </a>

@@ -44,7 +44,7 @@ const BlogPostPage: React.FC<IPostPageProps> = ({
         <p className="text-lg sm:leading-10 space-y-6 pb-6 ">
           {hydratedContent}
         </p>
-        <small className="text-base opacity-60">{date}</small>
+        <small className="text-base"> 🗓️ {date}</small>
         {tags && tags.map((tag) => <Label>{tag}</Label>)}
       </main>
     </div>

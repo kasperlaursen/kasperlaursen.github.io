@@ -22,10 +22,10 @@ const Home: React.FC<IHomeProps> = ({ posts }) => {
       <main className="space-y-3">
         <div>
           <p>
-            Im a web developer living in Denmark, currently working as a
+            I'm a Web Developer living in Denmark 🇩🇰 currently working as a
             full-time Software Engineer. <br />
-            When not coding, i enjoy tinkering 3D Printers, Smart Home and Drone
-            Photography.
+            When not coding I enjoy tinkering 3D Printers 🖨️, Smart Home 💡 and
+            Drone Photography 🚁.
           </p>
         </div>
         {posts &&
@@ -38,7 +38,7 @@ const Home: React.FC<IHomeProps> = ({ posts }) => {
                       {title}
                     </h2>
                     <p className="line-clamp-3">{excerpt}</p>
-                    <small className="text-base opacity-60">{date}</small>
+                    <small className="text-base">🗓️ {date}</small>
                   </div>
                 </a>
               </Link>

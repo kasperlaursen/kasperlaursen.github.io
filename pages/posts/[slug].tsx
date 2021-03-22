@@ -40,11 +40,11 @@ const BlogPostPage: React.FC<IPostPageProps> = ({
       </div>
 
       <main className="space-y-4">
-        <h1 className="font-bold text-4xl text-gray-800">{title}</h1>
-        <p>{date}</p>
-        <p className="text-xl sm:leading-10 space-y-6 mb-6 ">
+        <h1 className="font-bold text-3xl text-gray-800">{title}</h1>
+        <p className="text-lg sm:leading-10 space-y-6 pb-6 ">
           {hydratedContent}
         </p>
+        <small className="text-base opacity-60">{date}</small>
         {tags && tags.map((tag) => <Label>{tag}</Label>)}
       </main>
     </div>
@@ -64,12 +64,28 @@ export const getStaticProps: GetStaticProps<
   );
   const mdxSource = await renderToString(content);
 
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const formatDate = (date: Date): string =>
+    `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+
   return {
     props: {
       ...metadata,
-      date: `${new Date(metadata.date).toLocaleDateString()} ${new Date(
-        metadata.date
-      ).toLocaleTimeString()}`,
+      date: formatDate(new Date(metadata.date)),
       content: mdxSource,
     },
   };

@@ -14,7 +14,7 @@ interface IAllPosts {
 export const getAllPosts = (): IAllPosts[] => {
   const allPosts: string[] = fs.readdirSync(contentDirectory);
 
-  return allPosts.map((fileName) => {
+  const mappedPosts = allPosts.map((fileName) => {
     const slug = fileName.replace(".mdx", "");
     const fileContents = fs.readFileSync(
       path.join(contentDirectory, fileName),
@@ -34,4 +34,9 @@ export const getAllPosts = (): IAllPosts[] => {
       slug,
     };
   });
+
+  return mappedPosts.sort(
+    (a, b) =>
+      new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
+  );
 };

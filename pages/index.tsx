@@ -5,6 +5,7 @@ import Card from "../src/general/Card";
 import { IFullPost } from "../types/posts";
 import { GetStaticProps } from "next";
 import { getAllPosts } from "../lib/posts";
+import Label from "../src/general/Label";
 
 interface IHomeProps {
   posts: IFullPost[];
@@ -18,25 +19,31 @@ const Home: React.FC<IHomeProps> = ({ posts }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="space-y-8">
-        <div className="grid grid-cols-2 gap-4">
-          {posts &&
-            posts.map(({ title, date, slug, excerpt }) => (
-              <div>
-                <Link href={`/posts/${slug}`}>
-                  <a>
-                    <Card key={slug} className="p-3 space-y-1 cursor-pointer">
-                      <p className="font-bold truncate">{title}</p>
-                      <p className="line-clamp-3">{excerpt}</p>
-                      <p>
-                        <small>{date}</small>
-                      </p>
-                    </Card>
-                  </a>
-                </Link>
-              </div>
-            ))}
+      <main className="space-y-3">
+        <div>
+          <p>
+            Im a web developer living in Denmark, currently working as a
+            full-time Software Engineer. <br />
+            When not coding, i enjoy tinkering 3D Printers, Smart Home and Drone
+            Photography.
+          </p>
         </div>
+        {posts &&
+          posts.map(({ title, date, slug, excerpt }) => (
+            <div key={slug}>
+              <Link href={`/posts/${slug}`}>
+                <a>
+                  <div className="py-3 space-y-1 cursor-pointer">
+                    <h2 className="text-2xl font-extrabold truncate">
+                      {title}
+                    </h2>
+                    <p className="line-clamp-3">{excerpt}</p>
+                    <small className="text-base opacity-60">{date}</small>
+                  </div>
+                </a>
+              </Link>
+            </div>
+          ))}
       </main>
     </div>
   );
@@ -44,14 +51,31 @@ const Home: React.FC<IHomeProps> = ({ posts }) => {
 
 export const getStaticProps: GetStaticProps<IHomeProps> = async () => {
   const allPosts = getAllPosts();
+
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const formatDate = (date: Date): string =>
+    `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+
   return {
     props: {
       posts: allPosts.map(({ metadata, slug }) => ({
         ...metadata,
         slug,
-        date: `${new Date(metadata.date).toLocaleDateString()} ${new Date(
-          metadata.date
-        ).toLocaleTimeString()}`,
+        date: formatDate(new Date(metadata.date)),
       })),
     },
   };

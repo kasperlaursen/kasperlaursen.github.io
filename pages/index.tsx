@@ -20,12 +20,22 @@ const Home: React.FC<IHomeProps> = ({ posts }) => {
       </Head>
 
       <main className="space-y-3">
-        <div>
+        <div className="hidden sm:block">
           <p>
-            I'm a Web Developer living in Denmark 🇩🇰 currently working as a
-            full-time Software Engineer. <br />
-            When not coding I enjoy tinkering with 3D Printers 🖨️, Smart Home 💡
-            and Drone Photography 🚁.
+            I'm a Web Developer living in Denmark 🇩🇰 working as a Software
+            Engineer.
+          </p>
+          <p>
+            I enjoy tinkering with 3D Printers 🖨️, Smart Home 💡 and Drone
+            Photography 🚁.
+          </p>
+        </div>
+
+        <div className="text-center pb-10 sm:hidden">
+          <p>
+            I'm a Web Developer living in Denmark 🇩🇰 working as a Software
+            Engineer. I enjoy tinkering with 3D Printers 🖨️, Smart Home 💡 and
+            Drone Photography 🚁.
           </p>
         </div>
         {posts &&

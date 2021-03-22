@@ -11,7 +11,7 @@ const Header: React.FunctionComponent<IHeaderProps> = () => {
   return (
     <>
       <ThemeToggle />
-      <div className="flex flex-col sm:flex-row mt-12 mb-6 space-x-6 items-center border-gray-200 dark:border-gray-700 pb-6">
+      <div className="flex flex-col sm:flex-row mt-12 mb-0 sm:mb-6 space-x-6 items-center border-gray-200 dark:border-gray-700 pb-6">
         <img
           src="/pic.jpeg"
           alt="Image of Kasper"

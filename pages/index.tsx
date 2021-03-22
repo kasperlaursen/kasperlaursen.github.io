@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Card from "../src/general/Card";
 import { IFullPost } from "../types/posts";
 import { GetStaticProps } from "next";
 import { getAllPosts } from "../lib/posts";

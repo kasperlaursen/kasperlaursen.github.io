@@ -1,6 +1,6 @@
 import Link from "next/link";
 import * as React from "react";
-import { RiGithubLine } from "react-icons/ri";
+import { RiGithubLine, RiTwitterLine } from "react-icons/ri";
 import { TiSocialLinkedin } from "react-icons/ti";
 import ThemeToggle from "../theme/ThemeToggle";
 
@@ -31,6 +31,9 @@ const Header: React.FunctionComponent<IHeaderProps> = () => {
             </LinkContainer>
             <LinkContainer url="https://www.linkedin.com/in/habber/">
               <TiSocialLinkedin />
+            </LinkContainer>
+            <LinkContainer url="https://twitter.com/habberlabber">
+              <RiTwitterLine />
             </LinkContainer>
           </div>
         </div>

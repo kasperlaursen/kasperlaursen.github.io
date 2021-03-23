@@ -9,7 +9,7 @@ import hydrate from "next-mdx-remote/hydrate";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 import { getAllPosts } from "../../lib/posts";
-import Label from "../../src/general/Label";
+import Label from "../../components/general/Label";
 import { IPostMetadata } from "../../types/posts";
 import Link from "next/link";
 
@@ -45,7 +45,9 @@ const BlogPostPage: React.FC<IPostPageProps> = ({
           {hydratedContent}
         </p>
         <small className="text-base"> 🗓️ {date}</small>
-        {tags && tags.map((tag) => <Label>{tag}</Label>)}
+        <div className="space-x-3">
+          {tags && tags.map((tag) => <Label>{tag}</Label>)}
+        </div>
       </main>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/globals.css";
 import { AppProps } from "next/dist/next-server/lib/router/router";
-import Header from "../src/layout/Header";
+import Header from "../components/layout/Header";
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (

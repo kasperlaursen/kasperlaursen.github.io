@@ -1,11 +1,13 @@
 import * as React from "react";
 
 interface ILabelProps {}
+
 const colors: string[] = [
   "bg-green-400 hover:bg-green-500",
   "bg-blue-400 hover:bg-blue-500",
   "bg-purple-400 hover:bg-purple-500",
   "bg-red-400 hover:bg-red-500",
+  "bg-yellow-400 hover:bg-yellow-500",
 ];
 
 const Label: React.FunctionComponent<ILabelProps> = ({ children }) => {

@@ -13,7 +13,7 @@ const Home: React.FC<IHomeProps> = ({ posts }) => {
   return (
     <div>
       <Head>
-        <title>Laursen.dev</title>
+        <title>Hi! I'm Kasper Laursen 👋</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

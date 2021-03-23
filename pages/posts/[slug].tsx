@@ -39,7 +39,7 @@ const BlogPostPage: React.FC<IPostPageProps> = ({
         </Link>
       </div>
 
-      <main className="space-y-4">
+      <main className="space-y-4 pb-10">
         <h1 className="font-bold text-3xl text-gray-800">{title}</h1>
         <p className="text-lg sm:leading-10 space-y-6 pb-6 prose dark:prose-dark">
           {hydratedContent}

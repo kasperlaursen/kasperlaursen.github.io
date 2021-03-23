@@ -38,11 +38,11 @@ const Home: React.FC<IHomeProps> = ({ posts }) => {
         </div>
         {posts &&
           posts.map(({ title, date, slug, excerpt }) => (
-            <div key={slug}>
+            <div key={slug} className="group">
               <Link href={`/posts/${slug}`}>
                 <a>
                   <div className="py-3 space-y-1 cursor-pointer">
-                    <h2 className="text-2xl font-extrabold truncate">
+                    <h2 className="text-2xl font-extrabold truncate group-hover:text-green-500 transition-colors duration-500">
                       {title}
                     </h2>
                     {excerpt && <p className="line-clamp-3">{excerpt}</p>}

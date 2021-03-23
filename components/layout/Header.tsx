@@ -26,7 +26,7 @@ const Header: React.FunctionComponent<IHeaderProps> = () => {
           </Link>
           <p>On this site I posts about whatever interests me.</p>
           <div className="flex space-x-4 text-3xl justify-center sm:justify-start">
-            <LinkContainer url="https://github.com/Habberlabber">
+            <LinkContainer url="https://github.com/kasperlaursen">
               <RiGithubLine />
             </LinkContainer>
             <LinkContainer url="https://www.linkedin.com/in/habber/">

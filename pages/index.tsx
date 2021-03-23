@@ -14,7 +14,7 @@ const Home: React.FC<IHomeProps> = ({ posts }) => {
     <div>
       <Head>
         <title>Hi! I'm Kasper Laursen 👋</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="ldev.png" />
       </Head>
 
       <main className="space-y-3">

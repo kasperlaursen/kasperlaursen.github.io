@@ -1,61 +1,61 @@
 ---
-  title: The first post on my new site
-  excerpt: A short post about how I made this site.
-  date: 2021-03-23T12:00:00.000Z
-  tags: ["React", "Typescript", "Next.js", "Markdown", "Github Actions", "Github Pages"]
+ title: The first post on my new site
+ excerpt: A short post about how I made this site.
+ date: 2021-03-23T12:00:00.000Z
+ tags: ["React", "Typescript", "Next.js", "Markdown", "Github Actions", "Github Pages", "Tailwind"]
 ---
 
-Welcome to the first post on my new site! 👋  
-I guess I will use this post to tell a bit about how this site was made.  
+Welcome to the first post on my new site! 👋
+I guess I will use this post to tell a bit about how this site was made.
 You can find the source code in its [Github repo](https://github.com/kasperlaursen/kasperlaursen.github.io). 🎉
 
 ### 💿 Technologies
 
-The site is build using [Next.js](https://nextjs.org/) and [Tailwindcss](http://tailwindcss.com).  
+The site is build using [Next.js](https://nextjs.org/) and [Tailwindcss](http://tailwindcss.com).
 Posts are written as Markdown files, which are parsed by [next-mdx-remote](https://www.npmjs.com/package/next-mdx-remote) and [gray-matter](https://www.npmjs.com/package/gray-matter).
 
 Gray matter is used to get metadata from the top of the file:
 
 ```
 ---
-  title: The first post on my new site
-  excerpt: A short post about how I made this site.
-  date: 2021-03-23T12:00:00.000Z
-  tags: ["React", "Typescript", "Next.js"]
+ title: The first post on my new site
+ excerpt: A short post about how I made this site.
+ date: 2021-03-23T12:00:00.000Z
+ tags: ["React", "Typescript", "Next.js"]
 ---
 
 Welcome to the first post on my new site! 👋
-I guess I will use this post to tell a bit abut how this site was made.
+I guess I will use this post to tell a bit about how this site was made.
 
 ### Technologies
 
 ```
 
-The main content of the file is parsed using next-md-remote, and then styled using [@tailwindcss/typography](https://github.com/tailwindlabs/tailwindcss-typography).  
+The main content of the file is parsed using next-md-remote, and then styled using [@tailwindcss/typography](https://github.com/tailwindlabs/tailwindcss-typography).
 To make the posts work with dark mode I used [nightwind](https://github.com/jjranalli/nightwind).
 
 ### 🌐 Deployment
 
-The pages is deployed to Github Pages using [a Github Action](https://github.com/kasperlaursen/kasperlaursen.github.io/blob/master/.github/workflows/intergrate.yml) that builds a static verison of the site, and commits the /out dir to a seperate branch in the repository.
+The page is deployed to Github Pages using [a Github Action](https://github.com/kasperlaursen/kasperlaursen.github.io/blob/master/.github/workflows/intergrate.yml) that builds a static version of the site and commits the /out dir to a separate branch in the repository.
 
 ### 📖 Resources
 
 To get started I watched [How To Build A Blog With Next.js And Tailwind](https://www.youtube.com/watch?v=vu9gPcPs3mY) by [Harry Wolff](https://www.youtube.com/c/hswolff/videos) on Youtube.
 
-From the beginning I changed the project to Typescript by following the steps form [the next.js documentation](https://nextjs.org/docs/basic-features/typescript).
+From the beginning, I changed the project to Typescript by following the steps from [the next.js documentation](https://nextjs.org/docs/basic-features/typescript).
 
-Tailwindcss have documentation on how to install Tailwind in a Next.js project [on their site](https://tailwindcss.com/docs/guides/nextjs).
+Tailwindcss has documentation on how to install Tailwind in a Next.js project [on their site](https://tailwindcss.com/docs/guides/nextjs).
 
-For Icons I use [React Icons](https://react-icons.github.io/react-icons).
+For Icons, I use [React Icons](https://react-icons.github.io/react-icons).
 
-Darkmode is accomplished with Tailwinds default dark: prefix, and [nightwind](https://github.com/jjranalli/nightwind).  
+Dark mode is accomplished with Tailwinds default dark: prefix, and [nightwind](https://github.com/jjranalli/nightwind).
 The darkmode toggle was **heavely inspired** (copied) from [TailwindComponents.com](https://tailwindcomponents.com/component/switch).
 
 To figure out the Github Pages stuff I found [this article](https://dev.to/franciscojarceo/deploying-a-next-js-site-using-github-actions-1g1e) helpful.
 
-**To make Github Pages work you need to name the repository {username}.github.io**, or setup a custom domain. - More info can be found on this [Github issue](https://github.com/vercel/next.js/issues/2029).
+**To make Github Pages work you need to name the repository {username}.github.io**, or set up a custom domain. - More info can be found on this [Github issue](https://github.com/vercel/next.js/issues/2029).
 
 ### ✔️ The End
 
-Thanks for reading my first post!  
-I home you found it interesting and/or helpful 😊
+Thanks for reading my first post!
+I hope you found it interesting and/or helpful 😊
